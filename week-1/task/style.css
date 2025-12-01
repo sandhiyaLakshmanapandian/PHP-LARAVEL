@@ -1,0 +1,128 @@
+/* --- GENERAL STYLING --- */
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: #f8fbff;
+}
+
+/* --- MAIN TWO-COLUMN LAYOUT --- */
+.main-section {
+  display: flex;
+  gap: 40px;           /* space between left and right columns */
+  padding: 30px;
+  align-items: flex-start; /* align top of columns */
+}
+
+/* --- LEFT COLUMN: IMAGE + QUOTE --- */
+.left-column {
+  display: flex;
+  flex-direction: column; /* stack vertically */
+  align-items: center;    /* center image and quote horizontally */
+  gap: 40px;
+  flex: 1;                /* take available space */
+}
+
+.left-image img {
+  width: 250px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+.quotes h1 {
+  font-size: 1.6rem;
+  color: #003366;
+  background: linear-gradient(to right, #b3e5fc, #e3f2fd);
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+/* --- RIGHT COLUMN: FORM --- */
+
+
+.container {
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+form table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  padding: 10px;
+  text-align: left;
+}
+
+th {
+  color: #003366;
+  font-weight: 600;
+}
+
+/* --- FORM INPUT STYLING --- */
+input[type="text"], input[type="number"], input[type="email"], input[type="date"], input[type="tel"], textarea, select {
+  width: 100%;
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+input[type="radio"], input[type="checkbox"] {
+  margin-right: 5px;
+}
+
+textarea {
+  resize: none;
+}
+
+/* --- SUBMIT / RESET BUTTONS --- */
+input[type="submit"], input[type="reset"] {
+  background-color: #b65e00;
+  color: white;
+  font-size: 15px;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+input[type="submit"]:hover, input[type="reset"]:hover {
+  background-color: #008d3f;
+}
+
+/* --- RESPONSIVE LAYOUT --- */
+@media (max-width: 900px) {
+  .main-section {
+    flex-direction: column; /* stack left and right on small screens */
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .left-column, .right-column {
+    flex: unset; /* let them shrink naturally */
+  }
+
+  .quotes h1 {
+    font-size: 1.4rem;
+    text-align: center;
+  }
+
+  .left-image img {
+    width: 200px;
+  }
+}

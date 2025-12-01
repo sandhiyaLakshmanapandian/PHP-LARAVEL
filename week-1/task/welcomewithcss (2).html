@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Welcome</title>
+    <link rel="icon" type="image/png" href="weekicon.png">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+  </head>
+
+  <body class="body">
+    <div class="main-section">
+      <!-- LEFT COLUMN -->
+      <div class="left-column">
+        <div class="left-image">
+          <img src="welcome.png" alt="Welcome Image">
+        </div>
+        <div class="quotes">
+          <h1 id="quote">
+            A shared thought can spark a thousand ideas — let’s get ready to create!
+          </h1>
+        </div>
+      </div>
+
+      <!-- RIGHT COLUMN -->
+      <div class="right-column">
+        <div class="container">
+          <form id="surveyForm">
+            <table border="4">
+              <tr>
+                <th>Name</th>
+                <td><input type="text" id="name" placeholder="👤 Enter your Name" required></td>
+              </tr>
+
+              <tr>
+                <th>Age</th>
+                <td><input type="number" id="age" placeholder="🎂 Enter your Age" required></td>
+              </tr>
+
+              <tr>
+                <th>Gender</th>
+                <td>
+                  <input type="radio" name="gender" value="Male"> Male
+                  <input type="radio" name="gender" value="Female"> Female
+                </td>
+              </tr>
+
+              <tr>
+                <th>Email</th>
+                <td><input type="email" id="email" placeholder="✉ Enter your Email" required></td>
+              </tr>
+
+              <tr>
+                <th>Date of Birth</th>
+                <td><input type="date" id="dob" required></td>
+              </tr>
+
+              <tr>
+                <th>Phone No</th>
+                <td><input type="tel" id="phno" placeholder="📞 Enter your Phone No" required></td>
+              </tr>
+
+              <tr>
+                <th>Role</th>
+                <td>
+                  <input type="radio" name="role" value="Manager"> Manager
+                  <input type="radio" name="role" value="Developer"> Developer
+                  <input type="radio" name="role" value="Tester"> Tester
+                </td>
+              </tr>
+
+              <tr>
+                <th>Rate your Work</th>
+                <td>
+                  <input type="radio" name="rate" value="1"> 1
+                  <input type="radio" name="rate" value="2"> 2
+                  <input type="radio" name="rate" value="3"> 3
+                  <input type="radio" name="rate" value="4"> 4
+                  <input type="radio" name="rate" value="5"> 5
+                </td>
+              </tr>
+
+              <tr>
+                <th>Select your Work Mode</th>
+                <td>
+                  <select id="workmode" required>
+                    <option value="">Select ▼</option>
+                    <option value="Remote">Remote</option>
+                    <option value="Hybrid">Hybrid</option>
+                    <option value="Onsite">Onsite</option>
+                  </select>
+                </td>
+              </tr>
+
+              <tr>
+                <th>Do you enjoy collaborative work?</th>
+                <td>
+                  <input type="radio" name="collaborate" value="Yes"> Yes
+                  <input type="radio" name="collaborate" value="No"> No
+                </td>
+              </tr>
+
+              <tr>
+                <th>Would you recommend your workplace?</th>
+                <td>
+                  <input type="radio" name="recommend" value="Yes"> Yes
+                  <input type="radio" name="recommend" value="No"> No
+                </td>
+              </tr>
+
+              <tr>
+                <th>Tools You Use</th>
+                <td>
+                  <input type="checkbox" name="tools" value="VS Code"> VS Code
+                  <input type="checkbox" name="tools" value="GitHub"> GitHub
+                  <input type="checkbox" name="tools" value="Jira"> Jira
+                  <input type="checkbox" name="tools" value="Slack"> Slack
+                  <input type="checkbox" name="tools" value="Postman"> Postman
+                </td>
+              </tr>
+
+              <tr>
+                <th>Share your thoughts</th>
+                <td>
+                  <textarea id="thoughts" placeholder="✎ Don’t be afraid to share your thoughts. Sometimes a small idea can change the world..." rows="3" cols="50"></textarea>
+                </td>
+              </tr>
+
+              <tr>
+                <td><input type="submit" id="submit" value="Submit"></td>
+                <td><input type="reset" id="reset" value="Reset"></td>
+              </tr>
+            </table>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
