@@ -1,217 +1,65 @@
-# Laravel User & Blog CRUD Application
+Tasks
 
-A Laravel application with User and Blog CRUD operations, built with Laravel UI (Bootstrap).
+1. Role CRUD with Permission Selection
 
-## Features
+Implement Role Create, Read, Update, Delete with permission selection using the Spatie Laravel Permission package.
+Reference: https://spatie.be/docs/laravel-permission
 
-- **User Management**: Full CRUD operations for users (Create, Read, Update, Delete)
-- **Blog Management**: Full CRUD operations for blogs (Create, Read, Update, Delete)
-- **Authentication**: Laravel UI authentication system (Login, Register, Logout)
-- **Database Factories**: Factories for generating test data
-- **Database Seeders**: Seeders for populating the database with sample data
+2. Add Required Roles and Permissions
 
-## Requirements
+Create the following roles:
 
-- PHP >= 8.2
-- Composer
-- Node.js and NPM
-- MySQL (default) or PostgreSQL/SQLite
+Admin
 
-## Installation
+Customers
 
-### 1. Clone the repository
+Create the following permissions:
 
-```bash
-git clone https://github.com/prasanth-j/base-code.git
-cd base-code
-```
+Blog Read
 
-### 2. Install PHP dependencies
+Blog Write
 
-```bash
-composer install
-```
+User Profile Read
 
-### 3. Install Node dependencies
+User Profile Write
 
-```bash
-npm install
-```
+3. Restrict Access Based on Permissions
 
-### 4. Environment setup
+Ensure each module and action (view, create, edit, delete) is accessible only to users who have the necessary permissions.
 
-Copy the `.env.example` file to `.env`:
+4. Add Pagination Wherever Needed
 
-```bash
-cp .env.example .env
-```
+Apply pagination wherever it is needed in your project.
 
-Update the `.env` file with your MySQL database credentials:
+5. Implement Relationships
 
-```env
-DB_CONNECTION=mysql
-DB_HOST=127.0.0.1
-DB_PORT=3306
-DB_DATABASE=your_database_name
-DB_USERNAME=your_username
-DB_PASSWORD=your_password
-```
+Create the following Eloquent relationships:
 
-### 5. Generate application key
+User hasMany Blogs
 
-```bash
-php artisan key:generate
-```
+Blog belongsTo User
 
-### 6. Database setup
+6. Blogs Listing
 
-The application uses MySQL by default. Create a MySQL database:
+List all blogs in a table with:
 
-```sql
-CREATE DATABASE your_database_name;
-```
+Blog details
 
-Make sure your `.env` file has the correct MySQL credentials (see step 4).
+Corresponding user name
 
-### 7. Run migrations
+A "Show" icon for viewing details
 
-```bash
-php artisan migrate
-```
+7. Users Listing
 
-### 8. Seed the database (optional)
+List all users in a table with:
 
-This will create sample users and blogs:
+User details
 
-```bash
-php artisan db:seed
-```
+Assigned role
 
-Or run migrations and seed together:
+A "Show" icon for viewing details
 
-```bash
-php artisan migrate:fresh --seed
-```
+8. Check and Fix N+1 Issues
 
-### 9. Build frontend assets
+Review all blog/user listing queries for N+1 problems and fix them using appropriate techniques.
 
-```bash
-npm run build
-```
-
-For development with hot reload:
-
-```bash
-npm run dev
-```
-
-## Running the Application
-
-### Start the development server
-
-```bash
-php artisan serve
-```
-
-The application will be available at `http://localhost:8000`
-
-### Using the dev script (includes server, queue, logs, and vite)
-
-```bash
-composer run dev
-```
-
-## Database Structure
-
-### Users Table
-- `id` - Primary key
-- `name` - User's name
-- `email` - User's email (unique)
-- `email_verified_at` - Email verification timestamp
-- `password` - Hashed password
-- `remember_token` - Remember me token
-- `created_at` - Creation timestamp
-- `updated_at` - Update timestamp
-
-### Blogs Table
-- `id` - Primary key
-- `title` - Blog title
-- `content` - Blog content
-- `user_id` - Foreign key to users table
-- `created_at` - Creation timestamp
-- `updated_at` - Update timestamp
-
-## Routes
-
-### Authentication Routes
-- `GET /login` - Login page
-- `POST /login` - Login action
-- `GET /register` - Registration page
-- `POST /register` - Registration action
-- `POST /logout` - Logout action
-
-### User CRUD Routes (Protected by auth)
-- `GET /users` - List all users
-- `GET /users/create` - Show create user form
-- `POST /users` - Store new user
-- `GET /users/{user}/edit` - Show edit user form
-- `PUT /users/{user}` - Update user
-- `DELETE /users/{user}` - Delete user
-
-### Blog CRUD Routes (Protected by auth)
-- `GET /blogs` - List all blogs
-- `GET /blogs/create` - Show create blog form
-- `POST /blogs` - Store new blog
-- `GET /blogs/{blog}/edit` - Show edit blog form
-- `PUT /blogs/{blog}` - Update blog
-- `DELETE /blogs/{blog}` - Delete blog
-
-## Seeders
-
-### UserSeeder
-Creates:
-- 1 test user (test@example.com)
-- 10 additional random users
-
-### BlogSeeder
-Creates:
-- 3 blogs per user
-
-## Factories
-
-### UserFactory
-Generates fake user data with:
-- Random name
-- Unique email
-- Hashed password (default: "password")
-
-### BlogFactory
-Generates fake blog data with:
-- Random title
-- Random content (3 paragraphs)
-- Associated user_id
-
-## Default Test User
-
-After seeding, you can login with:
-- **Email**: test@example.com
-- **Password**: password
-
-## Usage
-
-1. Register a new account or login with the test user
-2. Navigate to "Users" in the navigation menu to manage users
-3. Navigate to "Blogs" in the navigation menu to manage blogs
-4. Create, edit, or delete users and blogs as needed
-
-## Development
-
-### Code Formatting
-
-```bash
-./vendor/bin/pint
-```
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
