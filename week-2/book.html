@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Book Form</title> 
+  <link rel="stylesheet" href="style.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h2>Welcome User!..</h2>
+    <form id="userForm" method="post" action="validate.php" enctype="multipart/form-data">
+      <table class="form-table" border="1">
+        <tr>
+          <th><label for="firstName">First Name:</label></th>
+          <td>
+            <input type="text" id="firstName" name="firstName" placeholder="👤Enter first name" required>
+            <span class="error" id="fnameError"></span>
+          </td>
+        </tr>
+        <tr>
+          <th><label for="lastName">Last Name:</label></th>
+          <td>
+            <input type="text" id="lastName" name="lastName" last name" required>
+            <span class="error" id="lnameError"></span>
+          </td>
+        </tr>
+        <tr>
+          <th><label for="mobile">Mobile:</label></th>
+          <td>
+            <input type="number" id="mobile" name="mobile" placeholder="📞10-digit number" required>
+            <span class="error" id="mobileError"></span>
+          </td>
+        </tr>
+        <tr>
+          <th><label for="dob">Date of Birth:</label></th>
+          <td>
+            <input type="text" id="dob" name="dob" placeholder="Select your DOB" required>
+            <span class="error" id="dobError"></span>
+          </td>
+        </tr>
+        <tr>
+          <th><label for="email">Email:</label></th>
+          <td>
+            <input type="text" id="email" name="email" placeholder="✉ example@mail.com" required>
+            <span class="error" id="emailError"></span>
+          </td>
+        </tr>
+        <tr>
+          <th><label for="address">Address:</label></th>
+          <td>
+            <textarea id="address" name="address" maxlength="1000" placeholder="Enter address (max 1000 chars)"></textarea>
+            <span class="error" id="addressError"></span>
+          </td>
+        </tr>
+        <tr>
+          <th><label for="profileImage">Profile Image:</label></th>
+          <td>
+            <input type="file" id="profileImage" name="profileImage" required>
+            <span class="error" id="imageError"></span>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2" class="center">
+            <button type="submit">Submit</button>
+          </td>
+        </tr>
+      </table>
+    </form>
+  </div>
+ <script src="script.js"></script>
+</body>
+</html>
